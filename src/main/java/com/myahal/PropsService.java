@@ -1,21 +1,18 @@
 package com.myahal;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PropsService {
-    @Value("${app.name}")
-    private String appName;
-
-    @Value("${app.comment}")
-    private String appComment;
+    @Autowired
+    PropsConfig propsConfig;
 
     public String getAppName() {
-        return appName;
+        return propsConfig.getName();
     }
 
     public String getComment() {
-        return appComment;
+        return propsConfig.getComment();
     }
 }
