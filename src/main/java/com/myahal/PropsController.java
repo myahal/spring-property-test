@@ -14,4 +14,9 @@ public class PropsController {
     public String props() {
         return service.getAppName();
     }
+
+    @RequestMapping(value="/comment", method = RequestMethod.GET)
+    public String comment() {
+        return service.getComment();
+    }
 }
